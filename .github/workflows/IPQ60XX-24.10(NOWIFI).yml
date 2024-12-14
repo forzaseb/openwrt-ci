@@ -95,6 +95,7 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
+        rm -rf ./feeds/packages/net/geoview
         ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
