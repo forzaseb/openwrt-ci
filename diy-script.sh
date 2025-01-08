@@ -9,8 +9,14 @@
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
+BASE_PATH=$(cd $(dirname $0) && pwd)
+
 # 修复 miniupnpd
 cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
+
+# 修复 fullconenat
+cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat-nft package/network/utils
+cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat package/network/utils
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
