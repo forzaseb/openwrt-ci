@@ -9,6 +9,7 @@ env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
   REPO_BRANCH: kernel-6.12
   CONFIG_FILE: configs/ipq60xx-6.12-nowifi.config
+  FEEDS_FILE: feeds/ipq60xx.txt
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -91,6 +92,7 @@ jobs:
     
     - name: Install Feeds(安装feeds)
       run: |
+        cp $FEEDS_FILE $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
