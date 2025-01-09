@@ -99,9 +99,9 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
-        chmod +x $DIY_SCRIPT
-        cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
+        cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
+        cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat-nft $OPENWRT_PATH/package/network/utils
+        cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat $OPENWRT_PATH/package/network/utils
         
 
     - name: Download DL Package(下载DL软件包)
