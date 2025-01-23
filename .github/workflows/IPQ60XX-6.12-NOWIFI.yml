@@ -104,6 +104,7 @@ jobs:
         cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
         cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat-nft $OPENWRT_PATH/package/network/utils
         cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat $OPENWRT_PATH/package/network/utils
+        cp -rf $GITHUB_WORKSPACE/theme/luci-theme-design $OPENWRT_PATH/package
         
 
     - name: Download DL Package(下载DL软件包)
