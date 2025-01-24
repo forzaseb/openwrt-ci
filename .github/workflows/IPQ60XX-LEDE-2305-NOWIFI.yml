@@ -24,8 +24,6 @@ jobs:
 
     steps:
     - name: Check Server Performance(检查服务器性能)
-      env:
-        DEBIAN_FRONTEND: noninteractive
       run: |
         echo "警告⚠"
         echo "分配的服务器性能有限，若选择的插件过多，务必注意CPU性能！"
@@ -42,7 +40,7 @@ jobs:
     - name: Initialization Environment(初始化环境)
       env:
         DEBIAN_FRONTEND: noninteractive
-        run: |
+      run: |
           docker rmi $(docker images -q)
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
           sudo -E apt-mark hold grub-efi-amd64-signed
