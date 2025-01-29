@@ -1,5 +1,4 @@
 src-git openwrt_helloworld https://github.com/sbwml/openwrt_helloworld.git;v5
-src-git infinityfreedomng https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git
 src-git packages https://github.com/immortalwrt/packages.git
 src-git luci https://github.com/immortalwrt/luci.git
 src-git routing https://git.openwrt.org/feed/routing.git
