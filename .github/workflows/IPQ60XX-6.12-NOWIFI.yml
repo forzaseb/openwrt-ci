@@ -96,7 +96,6 @@ jobs:
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
-        cp -rf $GITHUB_WORKSPACE/patches/luci $OPENWRT_PATH/feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode
         ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
