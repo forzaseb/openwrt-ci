@@ -95,12 +95,12 @@ jobs:
         ./scripts/feeds update -a
         cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
         ./scripts/feeds install -a
+        curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
-        cd $OPENWRT_PATH/ && curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
         cp -rf $GITHUB_WORKSPACE/theme/luci-theme-design $OPENWRT_PATH/package/emortal
         cp -rf $GITHUB_WORKSPACE/patches/autosamba $OPENWRT_PATH/package/emortal
 
