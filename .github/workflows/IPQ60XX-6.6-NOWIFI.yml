@@ -9,6 +9,7 @@ env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
   REPO_BRANCH: main
   CONFIG_FILE: configs/ipq60xx-6.6-nowifi.config
+  FEEDS_FILE: feeds/ipq60xx-6.6.txt
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -91,18 +92,19 @@ jobs:
     
     - name: Install Feeds(安装feeds)
       run: |
+        cp $FEEDS_FILE $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
         ./scripts/feeds install -a
-        curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
+        cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat-nft $OPENWRT_PATH/package/network/utils
+        cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat $OPENWRT_PATH/package/network/utils
         cp -rf $GITHUB_WORKSPACE/theme/luci-theme-design $OPENWRT_PATH/package/emortal
-        cp -rf $GITHUB_WORKSPACE/patches/autosamba $OPENWRT_PATH/package/emortal
 
     - name: Download DL Package(下载DL软件包)
       run: |
