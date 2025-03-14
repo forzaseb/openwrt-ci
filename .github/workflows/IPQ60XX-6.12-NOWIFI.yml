@@ -109,6 +109,7 @@ jobs:
         git clone https://github.com/sbwml/v2ray-geodata $OPENWRT_PATH/package/v2ray-geodata
         cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat-nft $OPENWRT_PATH/package/network/utils
         cp -rf $GITHUB_WORKSPACE/fullconenat/fullconenat $OPENWRT_PATH/package/network/utils
+        cp -rf $GITHUB_WORKSPACE/patches/zlib $OPENWRT_PATH/package/libs
         cp -rf $GITHUB_WORKSPACE/theme/luci-theme-design $OPENWRT_PATH/package
         
 
