@@ -95,7 +95,6 @@ jobs:
         cp $FEEDS_FILE $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
-        cp -f $GITHUB_WORKSPACE/patches/400-fix_nft_miniupnp.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/400-fix_nft_miniupnp.patch
         sed -i 's/32768/65535/g' $OPENWRT_PATH/feeds/nss_packages/qca-nss-ecm/files/qca-nss-ecm.sysctl
         rm -rf $OPENWRT_PATH/feeds/packages/net/mosdns
         rm -rf $OPENWRT_PATH/feeds/packages/net/v2ray-geodata
