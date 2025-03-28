@@ -95,6 +95,7 @@ jobs:
         cp $FEEDS_FILE $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
+        mkdir -p $OPENWRT_PATH/feeds/packages/net/vlmcsd/patches
         cp -f $GITHUB_WORKSPACE/patches/001-fix_compile_with_ccache.patch $OPENWRT_PATH/feeds/packages/net/vlmcsd/patches/001-fix_compile_with_ccache.patch
         cp -f $GITHUB_WORKSPACE/patches/999-chanage-default-leaseduration.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/999-chanage-default-leaseduration.patch
         sed -i 's/32768/65535/g' $OPENWRT_PATH/feeds/nss_packages/qca-nss-ecm/files/qca-nss-ecm.sysctl
