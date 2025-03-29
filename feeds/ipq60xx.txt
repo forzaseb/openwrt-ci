@@ -1,7 +1,9 @@
-src-git openwrt_helloworld https://github.com/sbwml/openwrt_helloworld.git;v5
+src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main
+src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main
+src-git helloworld https://github.com/fw876/helloworld.git
+src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main
 src-git packages https://github.com/immortalwrt/packages.git
 src-git luci https://github.com/immortalwrt/luci.git
-src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main
 src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
 src-git video https://github.com/openwrt/video.git
