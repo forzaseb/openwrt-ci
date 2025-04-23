@@ -103,6 +103,8 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
+        sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' $OPENWRT_PATH/target/linux/qualcommax/Makefile
+        sed -i 's/KERNEL_TESTING_PATCHVER:=6.6/KERNEL_TESTING_PATCHVER:=6.1/g' $OPENWRT_PATH/target/linux/qualcommax/Makefile
 
     - name: Download DL Package(下载DL软件包)
       run: |
