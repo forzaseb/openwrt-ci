@@ -3,7 +3,7 @@ name: IPQ60XX-6.6-NOWIFI
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 13 */2 * *
+    - cron: 0 13 */7 * *
 
 env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
