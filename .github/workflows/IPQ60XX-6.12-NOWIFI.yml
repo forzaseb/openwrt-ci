@@ -107,6 +107,9 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
+        cd $OPENWRT_PATH
+        curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
+        rm -rf $OPENWRT_PATH/package/turboacc/nft-fullcone
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 $OPENWRT_PATH/package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata $OPENWRT_PATH/package/v2ray-geodata
         cp -rf $GITHUB_WORKSPACE/theme/luci-theme-design $OPENWRT_PATH/package
