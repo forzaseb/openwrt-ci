@@ -109,7 +109,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 $OPENWRT_PATH/package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata $OPENWRT_PATH/package/v2ray-geodata
-        cp -f $GITHUB_WORKSPACE/filetransfer $OPENWRT_PATH/package
+        cp -rf $GITHUB_WORKSPACE/filetransfer $OPENWRT_PATH/package
 
     - name: Download DL Package(下载DL软件包)
       run: |
