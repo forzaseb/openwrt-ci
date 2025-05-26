@@ -1,4 +1,4 @@
-name: IPQ60XX-6.12-NOWIFI
+name: IPQ60XX-LiB-NOWIFI
 
 on:
   workflow_dispatch:
@@ -8,14 +8,14 @@ on:
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
   REPO_BRANCH: k6.12-nss
-  CONFIG_FILE: configs/ipq60xx-6.12-nowifi.config
+  CONFIG_FILE: configs/ipq60xx-LiB-nowifi.config
   FEEDS_FILE: feeds/ipq60xx.txt
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ60XX-6.12-NOWIFI
+  FIRMWARE_TAG: IPQ60XX-LiB-NOWIFI
   TZ: Asia/Shanghai
 
 jobs:
