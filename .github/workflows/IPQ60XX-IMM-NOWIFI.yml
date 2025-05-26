@@ -8,14 +8,14 @@ on:
 env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
   REPO_BRANCH: main
-  CONFIG_FILE: configs/ipq60xx-6.6-nowifi.config
+  CONFIG_FILE: configs/ipq60xx-imm-nowifi.config
   FEEDS_FILE: feeds/ipq60xx.txt
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ60XX-6.6-NOWIFI
+  FIRMWARE_TAG: IPQ60XX-IMM-NOWIFI
   TZ: Asia/Shanghai
 
 jobs:
