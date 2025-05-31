@@ -110,7 +110,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         DTS_PATH="$OPENWRT_PATH/target/linux/qualcommax/files/arch/arm64/boot/dts/qcom/"
         find $DTS_PATH -type f ! -iname '*nowifi*' -exec sed -i 's/ipq\(6018\|8074\).dtsi/ipq\1-nowifi.dtsi/g' {} +
-        sed -i 's/START=.*/START=86/g' $OPENWRT_PATH/kernel/mac80211/files/qca-nss-pbuf.init
+        sed -i 's/START=.*/START=86/g' $OPENWRT_PATH/package/kernel/mac80211/files/qca-nss-pbuf.init
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 $OPENWRT_PATH/package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata $OPENWRT_PATH/package/v2ray-geodata
         cp -rf $GITHUB_WORKSPACE/filetransfer $OPENWRT_PATH/package
