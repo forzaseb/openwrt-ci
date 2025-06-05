@@ -98,6 +98,7 @@ jobs:
         mkdir -p $OPENWRT_PATH/feeds/packages/net/vlmcsd/patches
         cp -f $GITHUB_WORKSPACE/patches/001-fix_compile_with_ccache.patch $OPENWRT_PATH/feeds/packages/net/vlmcsd/patches/001-fix_compile_with_ccache.patch
         cp -f $GITHUB_WORKSPACE/patches/999-chanage-default-leaseduration.patch $OPENWRT_PATH/feeds/packages/net/miniupnpd/patches/999-chanage-default-leaseduration.patch
+        sed -i 's/set=llvm.download-ci-llvm=true/set=llvm.download-ci-llvm=false/g' $OPENWRT_PATH/feeds/packages/lang/rust/Makefile
         sed -i 's/32768/65535/g' $OPENWRT_PATH/feeds/nss_packages/qca-nss-ecm/files/qca-nss-ecm.sysctl
         sed -i 's/START=.*/START=85/g' $OPENWRT_PATH/feeds/nss_packages/qca-nss-drv/files/qca-nss-drv.init
         rm -rf $OPENWRT_PATH/feeds/packages/net/mosdns
